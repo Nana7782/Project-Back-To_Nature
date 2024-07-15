@@ -1,0 +1,68 @@
+@use "../Base/mixins";
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.btnwhite {
+  @include mixins.btn;
+  background-color: #fff;
+  a {
+    color: #000;
+  }
+}
+
+.btngreen {
+  @include mixins.btn;
+  background-color: #a9cba6;
+  a {
+    color: #fff;
+  }
+}
+
+.btnwhite2 {
+  @include mixins.btn2;
+  background-color: #fff;
+  a {
+    color: #000;
+  }
+}
+
+.btngreen2 {
+  @include mixins.btn2;
+  background-color: #a9cba6;
+  a {
+    color: #fff;
+  }
+}
+
+// MEDIA QUERIES
+
+@include mixins.md {
+  .buttons {
+    flex-direction: row;
+    flex-wrap: wrap;
+    max-width: 600px;
+    margin: 0 auto;
+    position: relative;
+    top: -50px;
+  }
+}
+@include mixins.lg {
+  .buttons {
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: nowrap;
+    align-items: center;
+    max-width: 100%;
+    margin: 0 80px;
+    position: relative;
+    top: -130px;
+    div {
+      margin: 20px 20px;
+    }
+  }
+}

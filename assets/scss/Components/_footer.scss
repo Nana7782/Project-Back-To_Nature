@@ -1,0 +1,62 @@
+@use "../Base/mixins";
+
+footer {
+  border-top: 2px solid #000;
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.footermenu {
+  margin-top: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  img {
+    margin-bottom: 5px;
+  }
+  .footerlink {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: "UrbanistReg";
+    font-size: 12px;
+    line-height: 24px;
+    text-transform: uppercase;
+    a {
+      color: #000;
+    }
+  }
+}
+
+.socials {
+  margin: 15px 0;
+  img {
+    padding: 5px;
+  }
+}
+
+.legal {
+  margin-bottom: 20px;
+  a {
+    font-family: "UrbanistReg";
+    font-size: 10px;
+    color: #000;
+  }
+}
+// MEDIA QUERIES
+
+@include mixins.md {
+  .footermenu {
+    .footerlink {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+      width: 100%;
+      a {
+        margin: 0 20px;
+      }
+    }
+  }
+}

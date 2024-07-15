@@ -1,0 +1,84 @@
+@use "../Base/mixins";
+
+.info {
+  background: url(../img/Vector.png);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  h2 {
+    margin-top: 24px;
+  }
+
+  p {
+    padding: 0 32px;
+    margin-bottom: 54px;
+  }
+  button {
+    margin: 0 auto;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 1em;
+  }
+}
+
+.infocards {
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
+
+  div {
+    @include mixins.btn;
+    height: 288px;
+    width: 232px;
+    background-color: #fff;
+    border: 1px solid #000;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    img {
+      height: 120px;
+    }
+    p {
+      font-size: 16px;
+      padding-bottom: 24px;
+    }
+  }
+}
+
+// MEDIA QUERIES
+
+@include mixins.md {
+  .info {
+    background: none;
+    .infocards {
+      grid-template-columns: repeat(3, 1fr);
+      margin: 0 40px;
+      div:nth-of-type(4) {
+        position: relative;
+        left: 45%;
+      }
+      div:nth-of-type(5) {
+        position: relative;
+        left: 45%;
+      }
+    }
+  }
+}
+
+@include mixins.lg {
+  .info {
+    background: url(../img/Vector.png);
+    background-repeat: no-repeat;
+    background-size: 50%;
+    .infocards {
+      grid-template-columns: repeat(5, 1fr);
+      grid-template-rows: 1;
+      margin: 0 40px;
+      div:nth-of-type(4) {
+        position: unset;
+      }
+      div:nth-of-type(5) {
+        position: unset;
+      }
+    }
+  }
+}

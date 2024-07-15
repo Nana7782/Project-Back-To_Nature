@@ -1,0 +1,107 @@
+@use "../Base/mixins";
+
+.cars {
+  background: url(../img/Background\ Bulb.png);
+  background-repeat: no-repeat;
+  background-size: 100vw;
+  .heading {
+    margin-bottom: 70px;
+    h2 {
+      padding-top: 50px;
+    }
+    p {
+      padding: 0 2.2em;
+    }
+  }
+
+  .carcards {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    align-self: center;
+    gap: 15px;
+    margin-top: 30px;
+
+    div {
+      display: flex;
+      flex-direction: column;
+      background-color: #f0cea0;
+      max-width: 330px;
+      margin: 0 16px;
+      border: 1px solid #000;
+      border-radius: 30px;
+      box-shadow: inset -1px -1px 1px 1px #b3b1b1;
+      img {
+        background-color: #fff;
+        border-radius: 30px 30px 0 0;
+      }
+      article {
+        border-top: 1px solid #000;
+        display: flex;
+        justify-content: space-between;
+        padding: 13px 30px 0 30px;
+
+        align-items: baseline;
+        p:nth-of-type(1) {
+          font-family: "UrbanistBk";
+          font-size: 40px;
+        }
+        p:nth-of-type(2) {
+          font-family: "UrbanistReg";
+          text-wrap: nowrap;
+          font-size: 20px;
+          span {
+            font-size: 40px;
+          }
+        }
+      }
+      ul {
+        padding: 0 34px;
+        margin-bottom: 2rem;
+        li {
+          display: flex;
+          align-items: center;
+          gap: 5px;
+          list-style: none;
+          font-family: "UrbanistReg";
+          font-size: 1.5rem;
+          margin-bottom: 7px;
+          .icon {
+            border-radius: 50%;
+          }
+        }
+      }
+    }
+  }
+}
+button {
+  @include mixins.btn2;
+  margin: 0 auto;
+}
+
+// MEDIA QUERIES
+
+@include mixins.md {
+  .cars {
+    .carcards {
+      grid-template-columns: 1fr 1fr;
+      margin: 0 40px;
+      div:last-of-type {
+        position: relative;
+        left: 50%;
+      }
+    }
+  }
+}
+
+@include mixins.lg {
+  .cars {
+    .carcards {
+      grid-template-columns: repeat(3, 1fr);
+      margin: 0 40px;
+      div:last-of-type {
+        position: unset;
+      }
+    }
+  }
+}
